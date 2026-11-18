@@ -1,0 +1,420 @@
+/* Raíces de México - hoja de estilos
+   Proyecto de sitio web: México y sus tradiciones */
+
+:root {
+  --papel: #f8f2e7;
+  --papel-2: #efe5d4;
+  --tinta: #221a15;
+  --tinta-suave: #5b4c42;
+  --rosa: #b3135b;
+  --rosa-oscuro: #7e0d40;
+  --naranja: #d9640f;
+  --cempasuchil: #f2a516;
+  --verde: #12634a;
+  --azul: #23409a;
+  --linea: #dccdb6;
+  --ancho: 1160px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: "Source Sans 3", "Segoe UI", sans-serif;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--rosa); }
+a:hover { color: var(--rosa-oscuro); }
+
+h1, h2, h3 {
+  font-family: "Fraunces", Georgia, serif;
+  line-height: 1.1;
+  margin: 0;
+  font-weight: 800;
+}
+
+.contenedor {
+  max-width: var(--ancho);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Papel picado ---------- */
+.papel-picado {
+  display: block;
+  width: 100%;
+  height: 54px;
+}
+
+/* ---------- Encabezado ---------- */
+.encabezado {
+  background: var(--papel);
+  border-bottom: 1px solid var(--linea);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.encabezado .contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 32px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--tinta);
+}
+
+.logo:hover { color: var(--tinta); }
+
+.logo-nombre {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 900;
+  font-size: 25px;
+  line-height: 1;
+}
+
+.logo-nombre span { color: var(--rosa); }
+
+.logo-lema {
+  display: block;
+  font-size: 13px;
+  color: var(--tinta-suave);
+  margin-top: 4px;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 4px;
+}
+
+.menu a {
+  display: inline-block;
+  padding: 10px 12px;
+  text-decoration: none;
+  color: var(--tinta);
+  font-weight: 600;
+  font-size: 16px;
+  border-bottom: 3px solid transparent;
+}
+
+.menu a:hover { border-bottom-color: var(--cempasuchil); color: var(--tinta); }
+
+.menu a.activo { border-bottom-color: var(--rosa); }
+
+/* ---------- Portada ---------- */
+.portada {
+  padding: 56px 0 72px;
+}
+
+.portada .contenedor {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.antetitulo {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--verde);
+  margin-bottom: 14px;
+}
+
+.portada h1 {
+  font-size: clamp(44px, 6vw, 76px);
+  letter-spacing: -1px;
+  margin-bottom: 22px;
+}
+
+.portada h1 em {
+  font-style: italic;
+  color: var(--rosa);
+}
+
+.portada .entrada {
+  font-size: 20px;
+  color: var(--tinta-suave);
+  max-width: 34em;
+  margin: 0 0 28px;
+}
+
+.botones { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.boton {
+  display: inline-block;
+  padding: 13px 24px;
+  border-radius: 6px;
+  background: var(--rosa);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.boton:hover { background: var(--rosa-oscuro); color: #fff; }
+
+.boton.secundario {
+  background: transparent;
+  color: var(--tinta);
+  border: 2px solid var(--tinta);
+}
+
+.boton.secundario:hover { background: var(--tinta); color: var(--papel); }
+
+/* ---------- Fotos ---------- */
+.foto {
+  margin: 0;
+  background: var(--papel-2);
+}
+
+.foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.foto figcaption {
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--tinta-suave);
+  padding: 10px 2px 0;
+  background: var(--papel);
+}
+
+.foto-portada .marco {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 14px 14px 0 var(--cempasuchil);
+}
+
+/* ---------- Objetivo ---------- */
+.objetivo {
+  background: #fff;
+  border-top: 1px solid var(--linea);
+  border-bottom: 1px solid var(--linea);
+  padding: 80px 0;
+}
+
+.objetivo .contenedor {
+  display: grid;
+  grid-template-columns: 0.8fr 1.4fr;
+  gap: 56px;
+}
+
+.objetivo h2 { font-size: 44px; }
+
+.objetivo .texto-objetivo {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.55;
+  margin: 0 0 28px;
+}
+
+.audiencia {
+  border-left: 4px solid var(--verde);
+  padding: 4px 0 4px 20px;
+  color: var(--tinta-suave);
+  margin: 0;
+}
+
+.audiencia strong { color: var(--tinta); }
+
+/* ---------- Secciones del sitio ---------- */
+.seccion { padding: 88px 0; }
+
+.titulo-seccion { margin-bottom: 40px; max-width: 700px; }
+
+.titulo-seccion h2 { font-size: 44px; margin-bottom: 12px; }
+
+.titulo-seccion p { margin: 0; color: var(--tinta-suave); }
+
+.indice {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 2px solid var(--tinta);
+}
+
+.indice li { border-bottom: 1px solid var(--linea); }
+
+.indice a {
+  display: grid;
+  grid-template-columns: 70px 1fr 220px;
+  gap: 28px;
+  align-items: center;
+  padding: 24px 0;
+  text-decoration: none;
+  color: var(--tinta);
+}
+
+.indice a:hover h3 { color: var(--rosa); }
+
+.indice .numero {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 40px;
+  font-weight: 900;
+  color: var(--naranja);
+}
+
+.indice h3 { font-size: 28px; margin-bottom: 6px; }
+
+.indice p { margin: 0; color: var(--tinta-suave); }
+
+.indice .miniatura {
+  height: 130px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--papel-2);
+}
+
+.indice .miniatura img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- Calendario ---------- */
+.calendario {
+  background: var(--tinta);
+  color: var(--papel);
+  padding: 72px 0;
+}
+
+.calendario h2 { font-size: 36px; margin-bottom: 32px; }
+
+.fechas {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid rgba(248, 242, 231, 0.3);
+}
+
+.fecha {
+  padding: 22px 22px 6px 0;
+  border-right: 1px solid rgba(248, 242, 231, 0.2);
+  margin-right: 22px;
+}
+
+.fecha:last-child { border-right: 0; }
+
+.fecha .dia {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 900;
+  font-size: 40px;
+  color: var(--cempasuchil);
+  line-height: 1;
+}
+
+.fecha .mes {
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 6px 0 10px;
+}
+
+.fecha p { margin: 0; font-size: 16px; color: #e3d8c8; }
+
+/* ---------- Páginas internas ---------- */
+.cabecera-pagina {
+  padding: 56px 0 40px;
+  border-bottom: 1px solid var(--linea);
+}
+
+.cabecera-pagina h1 { font-size: clamp(40px, 5vw, 60px); margin-bottom: 14px; }
+
+.cabecera-pagina p { margin: 0; max-width: 40em; font-size: 20px; color: var(--tinta-suave); }
+
+.articulo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+  padding: 56px 0;
+  border-bottom: 1px solid var(--linea);
+}
+
+.articulo:nth-of-type(even) .foto { order: 2; }
+
+.articulo h2 { font-size: 34px; margin-bottom: 6px; }
+
+.articulo .cuando {
+  font-weight: 700;
+  color: var(--naranja);
+  margin: 0 0 14px;
+  font-size: 16px;
+}
+
+.articulo p { margin: 0 0 14px; }
+
+.articulo .foto .marco { aspect-ratio: 4 / 3; overflow: hidden; border-radius: 4px; }
+
+.articulo.sin-foto { grid-template-columns: 1fr; max-width: 760px; }
+
+.dato {
+  background: #fff;
+  border: 1px solid var(--linea);
+  border-radius: 4px;
+  padding: 16px 20px;
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.dato strong { color: var(--verde); }
+
+.lista-recursos { padding-left: 22px; }
+.lista-recursos li { margin-bottom: 10px; }
+
+/* ---------- Pie ---------- */
+.pie {
+  background: var(--papel-2);
+  border-top: 1px solid var(--linea);
+  padding: 40px 0;
+  font-size: 15px;
+  color: var(--tinta-suave);
+}
+
+.pie .contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.pie strong { color: var(--tinta); }
+
+/* ---------- Celular ---------- */
+@media (max-width: 860px) {
+  body { font-size: 17px; }
+  .portada .contenedor,
+  .objetivo .contenedor,
+  .articulo { grid-template-columns: 1fr; gap: 28px; }
+  .articulo:nth-of-type(even) .foto { order: 0; }
+  .indice a { grid-template-columns: 50px 1fr; }
+  .indice .miniatura { display: none; }
+  .fechas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fecha:nth-child(2) { border-right: 0; }
+  .menu a { padding: 8px 8px; font-size: 15px; }
+  .encabezado { position: static; }
+}
